@@ -1,0 +1,50 @@
+[user]
+    name = Tsvetomir Tsonev
+    email = cvetomirconev@gmail.com
+
+[core]
+    editor = vim
+    autocrlf = false
+
+[color]
+    ui = true
+
+[diff]
+    tool = meld
+
+[difftool]
+    prompt = false
+
+[difftool "meld"]
+    cmd = meld '$LOCAL $REMOTE'
+
+[merge]
+    tool = meld
+
+[mergetool]
+    prompt = false
+
+[mergetool "meld"]
+    cmd = meld '$BASE $LOCAL $REMOTE $MERGED'
+    trustExitCode = false
+
+[github]
+    user = tsvetomir
+    token = 7ab7c72132e07b5b485dce70d28d018e
+
+[alias]
+    a = add
+    c = commit -m
+    co = checkout
+    d = diff
+    dc = diff --cached
+    dt = difftool
+    dtc = difftool --cached
+    pr = pull --rebase
+    s = status
+
+[branch]
+    autosetuprebase = always
+
+[push]
+    default = tracking
