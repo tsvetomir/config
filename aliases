@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+alias g="git"
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'

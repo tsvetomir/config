@@ -5,9 +5,13 @@
 [core]
     editor = vim
     autocrlf = false
+    whitespace = cr-at-eol
 
 [color]
     ui = true
+
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%cr]%Creset (%an) %s
 
 [diff]
     tool = meld
@@ -40,8 +44,11 @@
     dc = diff --cached
     dt = difftool
     dtc = difftool --cached
+    out = log origin..HEAD
+    l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%an%Creset' --abbrev-commit --date=relative
     pr = pull --rebase
     s = status
+    qpl = log --pretty=\"%Cblue%h%Creset %Cgreen[%cr]%Creset %s\" origin/production..origin/master
 
 [branch]
     autosetuprebase = always
