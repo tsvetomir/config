@@ -87,9 +87,25 @@ export PATH=$HOME/.bin/:/usr/local/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
-if [ -d "/opt/local/bin" ]; then
-  export PATH=/opt/local/bin:$PATH
-fi
+# SSH agent
+test=`/bin/ps -ef | /bin/grep ssh-agent | /bin/grep -v grep  | /usr/bin/awk '{print $2}' | xargs`
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+if [ "$test" = "" ]; then
+   # there is no agent running
+   if [ -e "$HOME/agent.sh" ]; then
+      # remove the old file
+      /bin/rm -f $HOME/agent.sh
+   fi;
+   # start a new agent
+   /usr/bin/ssh-agent | /bin/grep -v echo >&$HOME/agent.sh
+fi;
+
+test -e $HOME/agent.sh && source $HOME/agent.sh
+
+alias kagent="kill -9 $SSH_AGENT_PID"
+
+# Disable suspend on Ctrl+S
+stty -ixon
+
+cd ~/github/kendo
 
