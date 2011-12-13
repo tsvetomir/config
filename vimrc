@@ -113,4 +113,4 @@ noremap <C-P> "0P
 :imap <MiddleMouse> <Nop>
 
 " Merge Kendo scripts
-autocmd BufWritePost ~/github/kendo/src/chart/*.js silent !cd ~/github/kendo && node build/kendo-scripts.js > /dev/null
+autocmd BufWritePost ~/github/kendo/src/chart/*.js silent !cd ~/github/kendo && node build/kendo-scripts.js > /dev/null 2>&1
