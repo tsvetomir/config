@@ -34,7 +34,7 @@
 
 [github]
     user = tsvetomir
-    token = 7ab7c72132e07b5b485dce70d28d018e
+    token = [SECRET]
 
 [alias]
     a = add
