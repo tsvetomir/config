@@ -1,11 +1,28 @@
 " Basics
 set nocompatible
+filetype off
 set noesckeys
 set complete=.
 
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" GitHub repos
+Bundle 'gmarik/vundle'
+Bundle 'rbgrouleff/bclose.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mutewinter/nginx.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'nanotech/jellybeans.vim'
+
+" vim-scripts repos
+Bundle 'Obvious-Mode'
+Bundle 'ZoomWin'
+Bundle 'Nazca'
+
 " General
 filetype plugin indent on
-set autochdir
 set clipboard+=unnamed
 set noerrorbells
 set backspace=2
@@ -66,7 +83,7 @@ hi javaScriptEventListenerKeyword guifg=#6699CC ctermfg=68
 
 " Terminal settings
 set t_Co=256
-set mouse=a
+set mouse=nv
 set ttymouse=xterm2
 
 " Syntax highlihgting
@@ -112,5 +129,5 @@ noremap <C-P> "0P
 :map <MiddleMouse> <Nop>
 :imap <MiddleMouse> <Nop>
 
-" Merge Kendo scripts
-autocmd BufWritePost ~/github/kendo/src/chart/*.js silent !cd ~/github/kendo && node build/kendo-scripts.js > /dev/null 2>&1
+" Build Kendo MVC examples project
+autocmd BufWritePost ~/github/kendo/demos/mvc/Controllers/* silent !cd ~/github/kendo && xbuild demos/mvc/Kendo.csproj > /dev/null 2>&1

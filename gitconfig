@@ -1,5 +1,5 @@
 [user]
-    name = Tsvetomir Tsonev
+	name = Tsvetomir Tsonev\n
     email = cvetomirconev@gmail.com
 
 [core]
@@ -45,7 +45,7 @@
     dt = difftool
     dtc = difftool --cached
     out = log origin..HEAD
-    l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%an%Creset' --abbrev-commit --date=relative
+    l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%an%Creset (%cr)' --abbrev-commit --date=relative
     pr = pull --rebase
     s = status
     qpl = log --pretty=\"%Cblue%h%Creset %Cgreen[%cr]%Creset %s\" origin/production..origin/master
