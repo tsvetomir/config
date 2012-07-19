@@ -4,23 +4,6 @@ filetype off
 set noesckeys
 set complete=.
 
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" GitHub repos
-Bundle 'gmarik/vundle'
-Bundle 'rbgrouleff/bclose.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mutewinter/nginx.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'nanotech/jellybeans.vim'
-
-" vim-scripts repos
-Bundle 'Obvious-Mode'
-Bundle 'ZoomWin'
-Bundle 'Nazca'
-
 " General
 filetype plugin indent on
 set clipboard+=unnamed
@@ -29,8 +12,8 @@ set backspace=2
 set autoread
 set encoding=utf-8
 set modelines=0
-set backupdir=/var/tmp/vim
-set directory=/var/tmp/vim
+set backupdir=E:\TEMP
+set directory=E:\TEMP
 set hidden
 
 " UI
@@ -128,6 +111,3 @@ noremap <C-P> "0P
 " Disable middle click paste
 :map <MiddleMouse> <Nop>
 :imap <MiddleMouse> <Nop>
-
-" Build Kendo MVC examples project
-autocmd BufWritePost ~/github/kendo/demos/mvc/Controllers/* silent !cd ~/github/kendo && xbuild demos/mvc/Kendo.csproj > /dev/null 2>&1
