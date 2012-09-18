@@ -53,6 +53,8 @@ compinit
 
 # automatically enter directories without cd
 setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
 
 # use vim as an editor
 export EDITOR=vim
@@ -83,12 +85,12 @@ SAVEHIST=1000
 HISTFILE=~/.history
 setopt APPEND_HISTORY
 
-export PATH=$HOME/.bin/:/usr/local/bin:$PATH
+export PATH=$HOME/.bin/:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH
 
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
 
 # SSH agent
-test=`/bin/ps -ef | /bin/grep ssh-agent | /bin/grep -v grep  | /usr/bin/awk '{print $2}' | xargs`
+test=`/bin/ps -ef | grep ssh-agent | grep -v grep  | /usr/bin/awk '{print $2}' | xargs`
 
 if [ "$test" = "" ]; then
    # there is no agent running
@@ -97,7 +99,7 @@ if [ "$test" = "" ]; then
       /bin/rm -f $HOME/agent.sh
    fi;
    # start a new agent
-   /usr/bin/ssh-agent | /bin/grep -v echo >&$HOME/agent.sh
+   /usr/bin/ssh-agent | grep -v echo >&$HOME/agent.sh
 fi;
 
 test -e $HOME/agent.sh && source $HOME/agent.sh
