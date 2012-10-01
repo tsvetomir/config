@@ -87,7 +87,7 @@ setopt APPEND_HISTORY
 
 export PATH=$HOME/.bin/:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH
 
-export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules:/usr/share/npm/node_modules
 
 # SSH agent
 test=`/bin/ps -ef | grep ssh-agent | grep -v grep  | /usr/bin/awk '{print $2}' | xargs`

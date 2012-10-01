@@ -5,3 +5,4 @@ alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
 alias cp-prod="git co production && git pr && git cherry-pick $1 && git push && git co master"
 alias scr="/usr/bin/screen -D -RR"
+alias ack="ack-grep"

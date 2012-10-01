@@ -15,6 +15,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mutewinter/nginx.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'kien/ctrlp.vim'
 
 " vim-scripts repos
 Bundle 'Obvious-Mode'
@@ -95,6 +96,12 @@ let mapleader = ","
 
 " Remove trailing whitespace when ,w is pressed
 nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Map CtrlP to Ctrl+T
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_cmd = 'CtrlP'
+
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Retain cursor position on Esc
 inoremap <silent> <Esc> <Esc>`^
