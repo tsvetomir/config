@@ -1,5 +1,4 @@
-autoload -U colors
-autoload -U compinit
+autoload -U compinit colors
 
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
@@ -48,6 +47,19 @@ compctl -K _git_remote_branch grb
 
 stty -ixon
 
+# Environment variables and Screen
+export VARSLOC=$HOME/.vars
+
+grabvars() {
+    for x in SSH_AGENT_PID SSH_AUTH_SOCK DISPLAY; do
+        echo "export $x='${(P)x:q}'"
+    done >$VARSLOC
+}
+
+sourcevars() {
+    [ -f $VARSLOC ] && source $VARSLOC
+}
+
 # completion
 compinit
 
@@ -55,6 +67,12 @@ compinit
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
+
+# 10 second wait if you do something that will delete everything.
+setopt RM_STAR_WAIT
+
+# Be Reasonable!
+setopt numeric_glob_sort
 
 # use vim as an editor
 export EDITOR=vim
@@ -85,29 +103,16 @@ SAVEHIST=1000
 HISTFILE=~/.history
 setopt APPEND_HISTORY
 
-export PATH=$HOME/.bin/:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH
+export PATH=$HOME/.bin/:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:/usr/share/npm/bin:./node_modules/.bin:$PATH
 
-export NODE_PATH=$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules:/usr/share/npm/node_modules
-
-# SSH agent
-test=`/bin/ps -ef | grep ssh-agent | grep -v grep  | /usr/bin/awk '{print $2}' | xargs`
-
-if [ "$test" = "" ]; then
-   # there is no agent running
-   if [ -e "$HOME/agent.sh" ]; then
-      # remove the old file
-      /bin/rm -f $HOME/agent.sh
-   fi;
-   # start a new agent
-   /usr/bin/ssh-agent | grep -v echo >&$HOME/agent.sh
-fi;
-
-test -e $HOME/agent.sh && source $HOME/agent.sh
-
-alias kagent="kill -9 $SSH_AGENT_PID"
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules:/usr/share/npm/node_modules:/usr/share/npm/bin
 
 # Disable suspend on Ctrl+S
 stty -ixon
 
+# Autoload screen if we aren't in it.  (Thanks Fjord!)
+if [[ $STY = '' ]] then grabvars; screen -xR; fi
+
+sourcevars
 cd ~/github/kendo
 

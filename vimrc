@@ -3,6 +3,7 @@ set nocompatible
 filetype off
 set noesckeys
 set complete=.
+set timeoutlen=200
 
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -16,6 +17,7 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'taku-o/vim-toggle'
 
 " vim-scripts repos
 Bundle 'Obvious-Mode'
