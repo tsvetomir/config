@@ -18,6 +18,10 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'taku-o/vim-toggle'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-eunuch'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'bling/vim-airline'
 
 " vim-scripts repos
 Bundle 'Obvious-Mode'
@@ -32,8 +36,8 @@ set backspace=2
 set autoread
 set encoding=utf-8
 set modelines=0
-set backupdir=/var/tmp/vim
-set directory=/var/tmp/vim
+set backupdir=~/tmp/vim
+set directory=~/tmp/vim
 set hidden
 
 " UI
@@ -140,3 +144,7 @@ noremap <C-P> "0P
 
 " Build Kendo MVC examples project
 autocmd BufWritePost ~/github/kendo/demos/mvc/Controllers/* silent !cd ~/github/kendo && xbuild demos/mvc/Kendo.csproj > /dev/null 2>&1
+
+" Associate *.cshtml with html filetype
+au BufRead,BufNewFile *.cshtml set filetype=html
+
