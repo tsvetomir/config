@@ -1,0 +1,118 @@
+.supportSubject {
+    font: 12pt calibri,sans-serif;
+}
+
+.supportSubject img {
+    display: none;
+}
+
+.adminThreadReply  {
+    width: 1596px !important;
+}
+
+.threadsTable .RadGrid {
+   width: 1560px !important;
+}
+
+.admPageRight {
+   width: 1560px !important;
+   float: left !important;
+}
+
+.adminThreadReply .adminInnerLeft {
+    width: 1268px !important;
+}
+
+.adminInnerThreadBox .adminInnerRight {
+    left: 1276px !important;
+}
+
+.admContentWrap {
+    margin-left: 20px !important;
+    width: 1880px !important;
+}
+
+.markAnswer {
+   height: 35px !important;
+}
+
+.givePoints,
+.messageHeaderClient,
+.messageHeaderAdmin {
+   padding: 4px !important;
+}
+
+.admShowTags {
+   margin-bottom: 10px !important;
+}
+
+.frontend_codeinsert {
+   color: #c5c5c5 !important;
+}
+
+body {
+   text-rendering: initial !important;
+}
+
+.frontend_codeinsert {
+   color: #fff !important;
+}
+
+.frontend_internalnote {
+    color: #000 !important;
+}
+
+.adminMessageText .text {
+    font: 12pt calibri,sans-serif;
+}
+
+.supportSubject {
+    width: 685px !important;
+}
+
+.supportSubject a {
+    width: 100% !important;
+    font: 12pt calibri,sans-serif;
+}
+
+.messageHeaderAdminWrap .messageDatesInfo {
+    font: 12pt calibri,sans-serif;
+}
+
+.adminThreadReply h1.title span {
+    font-size: 19px;
+}
+
+#supportNotification {
+    display: none;
+}
+
+.reWrapper {
+   min-width: 1256px !important;
+}
+
+img[src="images/ProductImages/chart_mvc.png"],
+img[src="images/ProductImages/upload_white.png"],
+img[src="images/ProductImages/Upload.png"],
+img[src="images/ProductImages/Chart.png"],
+img[src="images/ProductImages/barchart_kendoui_mvc.png"],
+img[src="images/ProductImages/bulletgraph_kendoui.png"],
+img[src="images/ProductImages/upload_kendoui_mvc.png"],
+img[src="images/ProductImages/bulletgraph_kendoui_mvc.png"],
+img[src="images/ProductImages/barchart_kendoui_php.png"],
+img[src="images/ProductImages/radialgauge_kendoui.png"],
+img[src="images/ProductImages/barchart_kendoui.png"],
+img[src="images/ProductImages/sparklines_kendoui_mvc.png"]
+{
+    background-color: #bbb;
+    margin-left: -50px;
+    padding: 4px 50px;
+}
+
+.frontend_internalnote {
+    color: #000 !important;
+}
+
+#supportNotification {
+    display: none;
+}
