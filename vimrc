@@ -17,11 +17,14 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'taku-o/vim-toggle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-eunuch'
-Bundle 'marijnh/tern_for_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
+Bundle 'mattn/emmet-vim'
 
 " vim-scripts repos
 Bundle 'Obvious-Mode'
@@ -30,7 +33,7 @@ Bundle 'Nazca'
 
 " General
 filetype plugin indent on
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set noerrorbells
 set backspace=2
 set autoread
@@ -74,7 +77,15 @@ set foldmethod=marker
 set foldlevel=100
 
 " GUI Settings
-set guifont="Droid Sans Mono 10"
+set guifont=Droid\ sans\ Mono\ for\ Powerline\ 10
+set guioptions-=m
+set guioptions-=t
+set guioptions-=T
+set guioptions-=r
+set guioptions-=l
+set guioptions-=L
+map <silent> <F11>
+            \   :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 set background=dark
 colo nazca
 hi javaScriptBrowserObjects       guifg=#DBB6D2 ctermfg=182   gui=italic
@@ -141,6 +152,13 @@ noremap <C-P> "0P
 " Disable middle click paste
 :map <MiddleMouse> <Nop>
 :imap <MiddleMouse> <Nop>
+
+" VIM Airline
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+  endif
+let g:airline_symbols.space = "\ua0"
 
 " Build Kendo MVC examples project
 autocmd BufWritePost ~/github/kendo/demos/mvc/Controllers/* silent !cd ~/github/kendo && xbuild demos/mvc/Kendo.csproj > /dev/null 2>&1
