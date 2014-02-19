@@ -33,7 +33,7 @@ Bundle 'Nazca'
 
 " General
 filetype plugin indent on
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 set noerrorbells
 set backspace=2
 set autoread
