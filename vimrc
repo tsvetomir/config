@@ -17,14 +17,13 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
-Bundle 'mattn/emmet-vim'
 
 " vim-scripts repos
 Bundle 'Obvious-Mode'
@@ -119,6 +118,9 @@ let g:ctrlp_map = '<c-t>'
 let g:ctrlp_cmd = 'CtrlP'
 
 nnoremap <leader>b :CtrlPBuffer<CR>
+
+set wildignore+=*/dist/*,*/node_modules/*,*.min.js
+let g:ctrlp_user_command = 'find %s -type f -not -path "*/dist/*" -not -path "*/node_modules/*" -not -path "*/dist/*"'
 
 " Retain cursor position on Esc
 inoremap <silent> <Esc> <Esc>`^

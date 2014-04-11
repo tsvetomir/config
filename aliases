@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-alias ack="ack-grep"
+alias a="ack-grep -a"
+alias aa="ack-grep -a"
 alias cp-prod="git co production && git pr && git cherry-pick $1 && git push && git co master"
 alias du="du -hsc"
 alias g="git"
@@ -9,4 +10,5 @@ alias ls='ls --color=auto --human-readable'
 alias ll='ls -l'
 alias scr="/usr/bin/screen -D -RR"
 alias serve="python -m SimpleHTTPServer 8081"
-alias upgrade="sudo apt-get update && time sudo apt-get dist-upgrade"
+alias upgrade="sudo apt-get update && time sudo apt-get -y dist-upgrade"
+alias canon-count="gphoto2 --get-config /main/status/shuttercounter"
