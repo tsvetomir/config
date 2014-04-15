@@ -44,33 +44,9 @@
     dc = diff --cached
     dt = difftool
     dtc = difftool --cached
-    out = log origin..HEAD
     l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%an%Creset (%cr)' --abbrev-commit --date=relative
     pr = "!git fetch --prune && git rebase --preserve-merges `git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
     s = status -sb
-    qpl = log --pretty=\"%Cblue%h%Creset %Cgreen[%cr]%Creset %s\" origin/production..origin/master
-
-    #############################
-    # public/private mirrors aliases
-    #############################
-    pr-tags = "!git fetch core --tags && git fetch origin --tags"
-
-    # Bring alias from public repo to private
-    put-in-master = "!git checkout master && git pull --rebase && git cherry-pick core/master && git push && git checkout core-master && git update-tags"
-
-    # use this when cherry picking from private to public
-    drop-deleted-by-us = "!git rm `git status --porcelain | grep ^DU | cut -d' ' -f2`"
-
-    # do this after all commits are ported from public to private
-    update-core-tag = "!git tag -f r-private core/master && git push -f core r-private;"
-
-    # do this after all commits are ported from private to public
-    update-master-tag = "!git tag -f r-public origin/master && git push -f origin r-public;"
-
-    update-tags = "!git update-core-tag && git update-master-tag"
-
-    # skip a cherry-pick when in progres
-    skip-cherry = "!git reset; git clean -df; git cherry-pick --continue"
 
 [branch]
     autosetuprebase = always
