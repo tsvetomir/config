@@ -92,17 +92,25 @@ body {
 }
 
 img[src="images/ProductImages/chart_mvc.png"],
-img[src="images/ProductImages/upload_white.png"],
+img[src="images/ProductImages/dataviz_kendoui.png"],
 img[src="images/ProductImages/Upload.png"],
 img[src="images/ProductImages/Chart.png"],
-img[src="images/ProductImages/barchart_kendoui_mvc.png"],
-img[src="images/ProductImages/bulletgraph_kendoui.png"],
-img[src="images/ProductImages/upload_kendoui_mvc.png"],
-img[src="images/ProductImages/bulletgraph_kendoui_mvc.png"],
-img[src="images/ProductImages/barchart_kendoui_php.png"],
-img[src="images/ProductImages/radialgauge_kendoui.png"],
 img[src="images/ProductImages/barchart_kendoui.png"],
-img[src="images/ProductImages/sparklines_kendoui_mvc.png"]
+img[src="images/ProductImages/barchart_kendoui_mvc.png"],
+img[src="images/ProductImages/barchart_kendoui_php.png"],
+img[src="images/ProductImages/barcode_kendoui.png"],
+img[src="images/ProductImages/bulletgraph_kendoui.png"],
+img[src="images/ProductImages/bulletgraph_kendoui_mvc.png"],
+img[src="images/ProductImages/bulletgraph_kendoui_php.png"],
+img[src="images/ProductImages/map_kendoui.png"],
+img[src="images/ProductImages/radialgauge_kendoui.png"],
+img[src="images/ProductImages/sparklines_kendoui.png"],
+img[src="images/ProductImages/sparklines_kendoui_mvc.png"],
+img[src="images/ProductImages/upload_white.png"],
+img[src="images/ProductImages/upload_kendoui_mvc.png"],
+img[src="images/ProductImages/upload_kendoui_php.png"],
+img[src="images/ProductImages/map_kendoui_mvc.png"],
+img[src="images/ProductImages/diagram_kendoui.png"]
 {
     background-color: #bbb;
     margin-left: -50px;
