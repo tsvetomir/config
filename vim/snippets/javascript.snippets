@@ -6,8 +6,15 @@ snippet test
 # QUnit module
 snippet module
 	// ------------------------------------------------------------
-	module("${1:module_name}", {
-		setup: function() {
-			${2}
-		}
-	});
+	(function() {
+		module("${1:module_name}", {
+			setup: function() {
+				${2}
+			}
+		});
+	})();
+# IIFE
+snippet iife
+	(function() {
+		${1}
+	})();
