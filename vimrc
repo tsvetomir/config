@@ -69,6 +69,9 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Spelling
+autocmd FileType markdown setlocal spelllang=en_us
+
 " Folding
 set nofoldenable
 set foldmarker={,}

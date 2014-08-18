@@ -3,6 +3,7 @@
 alias a="ack-grep -a"
 alias aa="ack-grep -a"
 alias cp-prod="g co production && g pr && g cherry-pick master && g push && g co master"
+alias cp-prod-merge="g co production && g pr && g cherry-pick master -m 1 && g push && g co master"
 alias du="du -hsc"
 alias g="git"
 alias gg="gitg -c"
@@ -12,6 +13,8 @@ alias scr="/usr/bin/screen -D -RR"
 alias serve="python -m SimpleHTTPServer 8081"
 alias upgrade="sudo apt-get update && time sudo apt-get -y dist-upgrade"
 alias canon-count="gphoto2 --get-config /main/status/shuttercounter"
+
+alias xvfb="xvfb-run --auto-servernum -w 1"
 
 alias karma-chart="xvfb-run grunt karma:unit --tests='tests/{chart,stock,sparkline}/**/*.js'"
 alias karma-chart-once="xvfb-run grunt karma:unit --tests='tests/{chart,stock,sparkline}/**/*.js' --single-run=true"
