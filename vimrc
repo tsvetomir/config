@@ -70,7 +70,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Spelling
-autocmd FileType markdown setlocal spelllang=en_us
+autocmd FileType markdown setlocal spell spelllang=en_us
 
 " Folding
 set nofoldenable
