@@ -1,5 +1,4 @@
-{
-"run_list": [
+{ "run_list": [
     "recipe[samba]",
     "recipe[apcupsd]"
 ]}
