@@ -1,3 +1,7 @@
+package "zsh"
+package "vim"
+package "tree"
+
 cookbook_file "rc.conf" do
   path "/etc/rc.conf"
   action :create
