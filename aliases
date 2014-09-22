@@ -6,3 +6,4 @@ alias ls='ls -G'
 alias ll='ls -l'
 alias scr="/usr/bin/screen -D -RR"
 alias serve="python -m SimpleHTTPServer 8081"
+alias ntop="systat -ifstat"
