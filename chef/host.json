@@ -1,4 +1,5 @@
 { "run_list": [
     "recipe[host::base]",
-    "recipe[host::network]"
+    "recipe[host::network]",
+    "recipe[apcupsd]"
 ]}
