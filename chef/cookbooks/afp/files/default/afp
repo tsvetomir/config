@@ -1,6 +1,0 @@
-dbus_enable="YES"
-netatalk_enable="YES"
-afpd_enable="YES"
-cnid_metad_enable="YES"
-avahi_daemon_enable="YES"
-avahi_dnsconfd_enable="YES"
