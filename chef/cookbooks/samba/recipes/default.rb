@@ -1,7 +1,7 @@
 package "samba41"
 
-cookbook_file "samba" do
-  path "/etc/rc.conf.d/samba"
+cookbook_file "samba_server" do
+  path "/etc/rc.conf.d/samba_server"
   action :create
 end
 
