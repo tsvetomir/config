@@ -39,6 +39,14 @@ cookbook_file "afpd.service" do
   action :create
 end
 
+ruby_block "nsswitch.conf" do
+    block do
+        file = Chef::Util::FileEdit.new("/etc/nsswitch.conf")
+        file.search_file_replace_line(/^hosts:/, "hosts: files dns mdns")
+        file.write_file
+    end
+end
+
 service "dbus" do
   action [:start]
 end
