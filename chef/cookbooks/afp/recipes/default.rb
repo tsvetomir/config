@@ -29,8 +29,8 @@ cookbook_file "afpd.conf" do
   action :create
 end
 
-cookbook_file "AppleVolumesTimeMachine.default" do
-  path "/usr/local/etc/AppleVolumesTimeMachine.default"
+cookbook_file "AppleVolumes.default" do
+  path "/usr/local/etc/AppleVolumes.default"
   action :create
 end
 
