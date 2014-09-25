@@ -1,5 +1,6 @@
 { "run_list": [
     "recipe[samba]",
     "recipe[afp::shares]",
-    "recipe[afp]"
+    "recipe[afp]",
+    "recipe[freebsd::portsnap]"
 ]}
