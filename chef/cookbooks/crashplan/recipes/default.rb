@@ -14,6 +14,20 @@ cookbook_file 'crashplan' do
   action :create
 end
 
+cookbook_file 'linux' do
+  path '/etc/rc.conf.d/linux'
+  action :create
+end
+
+ruby_block 'fstab' do
+    block do
+        linproc = 'linproc /compat/linux/proc linprocfs rw 0 0'
+        file = Chef::Util::FileEdit.new('/etc/fstab')
+        file.insert_line_if_no_match(/^linproc/, linproc)
+        file.write_file
+    end
+end
+
 service 'crashplan' do
   action :start
 end
