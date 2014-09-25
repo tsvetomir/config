@@ -1,0 +1,23 @@
+#!/bin/sh -
+#
+#
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$weekly_freebsd-update_enable" in
+    [Yy][Ee][Ss])
+        echo ""
+        echo "Updating system via freebsd-update:"
+
+        freebsd-update cron install;;
+
+    *)  rc=0;;
+esac
+
+exit $rc
