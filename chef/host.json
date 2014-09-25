@@ -2,5 +2,6 @@
     "recipe[host::base]",
     "recipe[host::network]",
     "recipe[apcupsd]",
-    "recipe[periodic]"
+    "recipe[periodic]",
+    "recipe[mail]"
 ]}
