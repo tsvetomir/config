@@ -6,8 +6,8 @@ cookbook_file 'periodic.conf' do
   action :create
 end
 
-cookbook_file '900.freebsd-update' do
-  path '/etc/periodic/weekly/900.freebsd-update'
+cookbook_file '942.freebsd-update' do
+  path '/usr/local/etc/periodic/weekly/942.freebsd-update'
   mode "0755"
   action :create
 end
