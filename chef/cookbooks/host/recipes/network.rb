@@ -8,6 +8,11 @@ cookbook_file "routing" do
   action :create
 end
 
+cookbook_file "local_unbound" do
+  path "/etc/rc.conf.d/local_unbound"
+  action :create
+end
+
 cookbook_file "hosts" do
   path "/etc/hosts"
   action :create
