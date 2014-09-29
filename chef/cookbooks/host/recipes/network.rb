@@ -3,6 +3,11 @@ cookbook_file "network" do
   action :create
 end
 
+cookbook_file "routing" do
+  path "/etc/rc.conf.d/routing"
+  action :create
+end
+
 cookbook_file "hosts" do
   path "/etc/hosts"
   action :create

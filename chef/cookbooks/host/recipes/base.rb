@@ -14,11 +14,6 @@ directory "/etc/rc.conf.d" do
     action :create
 end
 
-cookbook_file "defaultrouter" do
-  path "/etc/rc.conf.d/defaultrouter"
-  action :create
-end
-
 cookbook_file "motd" do
   path "/etc/motd"
   action :create
