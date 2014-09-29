@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD: head/sysutils/linux-crashplan/files/crashplan.in 334442 2013-11-20 19:10:14Z wg $
+
+# PROVIDE: crashplan
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="crashplan"
+rcvar="crashplan_enable"
+procname="/usr/local/linux-sun-jre1.7.0/bin/java"
+
+command="/usr/local/share/crashplan/bin/CrashPlanEngine"
+
+pidfile="/var/run/CrashPlanEngine.pid"
+
+start_precmd="install -d /var/log/crashplan"
+start_cmd="${command} start"
+stop_cmd="${command} stop"
+
+load_rc_config ${name}
+run_rc_command "$1"

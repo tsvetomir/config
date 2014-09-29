@@ -14,6 +14,11 @@ cookbook_file 'crashplan' do
   action :create
 end
 
+cookbook_file 'rc_d_crashplan' do
+  path '/usr/local/etc/rc.d/crashplan'
+  action :create
+end
+
 cookbook_file 'linux' do
   path '/etc/rc.conf.d/linux'
   action :create
