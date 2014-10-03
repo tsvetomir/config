@@ -1,2 +1,3 @@
 ifconfig_igb0="inet 192.168.1.10 netmask 255.255.255.0"
+ifconfig_igb0_ipv6="inet6 accept_rtadv"
 ifconfig_igb1="DHCP"

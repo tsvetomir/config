@@ -13,6 +13,11 @@ cookbook_file "local_unbound" do
   action :create
 end
 
+cookbook_file "rtsold" do
+  path "/etc/rc.conf.d/rtsold"
+  action :create
+end
+
 cookbook_file "hosts" do
   path "/etc/hosts"
   action :create
