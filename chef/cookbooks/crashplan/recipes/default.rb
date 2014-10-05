@@ -35,4 +35,5 @@ end
 
 service 'crashplan' do
   action :start
+  supports :status => true
 end

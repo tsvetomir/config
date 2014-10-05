@@ -12,5 +12,5 @@ end
 
 service "samba_server" do
   action [:start, :reload]
+  supports :status => true
 end
-
