@@ -3,5 +3,6 @@
     "recipe[host::network]",
     "recipe[apcupsd]",
     "recipe[periodic]",
-    "recipe[mail]"
+    "recipe[mail]",
+    "recipe[smartd]"
 ]}
