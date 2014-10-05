@@ -4,5 +4,6 @@
     "recipe[samba]",
     "recipe[afp::shares]",
     "recipe[afp]",
-    "recipe[crashplan]"
+    "recipe[crashplan]",
+    "recipe[plex]"
 ]}
