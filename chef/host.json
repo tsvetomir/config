@@ -4,5 +4,6 @@
     "recipe[apcupsd]",
     "recipe[periodic]",
     "recipe[mail]",
-    "recipe[smartd]"
+    "recipe[smartd]",
+    "recipe[portmaster]"
 ]}
