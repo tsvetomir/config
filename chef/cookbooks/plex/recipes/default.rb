@@ -20,3 +20,9 @@ service 'plexmediaserver' do
     action :start
     supports :status => true
 end
+
+group 'plex' do
+    action :modify
+    members ['plex', 'tsonev', 'imkoleva']
+    append true
+end
