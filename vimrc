@@ -38,8 +38,8 @@ set backspace=2
 set autoread
 set encoding=utf-8
 set modelines=0
-set backupdir=~/tmp/vim
-set directory=~/tmp/vim
+set backupdir=~/.vim/backup
+set directory=/tmp
 set hidden
 
 " UI
