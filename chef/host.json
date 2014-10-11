@@ -1,9 +1,0 @@
-{ "run_list": [
-    "recipe[host::base]",
-    "recipe[host::network]",
-    "recipe[apcupsd]",
-    "recipe[periodic]",
-    "recipe[mail]",
-    "recipe[smartd]",
-    "recipe[portmaster]"
-]}

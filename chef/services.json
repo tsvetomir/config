@@ -1,9 +1,0 @@
-{ "run_list": [
-    "recipe[freebsd::portsnap]",
-
-    "recipe[samba]",
-    "recipe[afp::shares]",
-    "recipe[afp]",
-    "recipe[crashplan]",
-    "recipe[plex]"
-]}
