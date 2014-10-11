@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
