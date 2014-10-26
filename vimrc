@@ -10,25 +10,26 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " GitHub repos
-Bundle 'gmarik/vundle'
-Bundle 'rbgrouleff/bclose.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mutewinter/nginx.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'kien/ctrlp.vim'
-"Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'jtratner/vim-flavored-markdown'
-Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
+Plugin 'gmarik/vundle'
+Plugin 'rbgrouleff/bclose.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mutewinter/nginx.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
 
 " vim-scripts repos
-Bundle 'Obvious-Mode'
-Bundle 'ZoomWin'
-Bundle 'Nazca'
+Plugin 'Obvious-Mode'
+Plugin 'ZoomWin'
+Plugin 'Nazca'
+
+call vundle#end()
 
 " General
 filetype plugin indent on
