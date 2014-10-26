@@ -5,7 +5,7 @@ cutstring="DO NOT EDIT BELOW THIS LINE"
 for name in *; do
   target="$HOME/.$name"
   if [ -e $target ]; then
-    if [ ! -L $target ]; then
+    if [[ ! -L $target && ! -d $target ]]; then
       cutline=`grep -n -m1 "$cutstring" "$target" | sed "s/:.*//"`
       if [[ -n $cutline ]]; then
         let "cutline = $cutline - 1"
