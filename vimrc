@@ -10,18 +10,18 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " GitHub repos
-Bundle 'gmarik/vundle'
-Bundle 'rbgrouleff/bclose.vim'
-Bundle 'mutewinter/nginx.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
+Plugin 'gmarik/vundle'
+Plugin 'rbgrouleff/bclose.vim'
+Plugin 'mutewinter/nginx.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
 
 " vim-scripts repos
-Bundle 'Obvious-Mode'
-Bundle 'Nazca'
+Plugin 'Obvious-Mode'
+Plugin 'Nazca'
 
 call vundle#end()
 
