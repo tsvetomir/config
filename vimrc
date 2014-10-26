@@ -6,8 +6,8 @@ set complete=.
 set timeoutlen=200
 
 " Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " GitHub repos
 Bundle 'gmarik/vundle'
@@ -170,4 +170,5 @@ autocmd BufWritePost ~/github/kendo/demos/mvc/Controllers/* silent !cd ~/github/
 
 " Associate *.cshtml with html filetype
 au BufRead,BufNewFile *.cshtml set filetype=html
+
 
