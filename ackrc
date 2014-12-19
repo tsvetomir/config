@@ -12,5 +12,11 @@ combined=.dataviz.js
 --type-add
 combined=.mobile.js
 
+--type-set
+asp=.cshtml
+--type-add
+asp=.cshtml
+
 --nomin
 --nocombined
+--asp

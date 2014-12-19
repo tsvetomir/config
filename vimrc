@@ -80,7 +80,7 @@ set foldmethod=marker
 set foldlevel=100
 
 " GUI Settings
-set guifont=Droid\ sans\ Mono\ for\ Powerline\ 10
+set guifont=Droid\ sans\ Mono\ for\ Powerline\ 11
 set guioptions-=m
 set guioptions-=t
 set guioptions-=T

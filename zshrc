@@ -121,5 +121,4 @@ stty -ixon
 # if [[ $STY = '' ]] then grabvars; screen -xR; fi
 
 sourcevars
-cd ~/github/kendo
 

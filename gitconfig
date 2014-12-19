@@ -1,6 +1,7 @@
 [user]
     name = Tsvetomir Tsonev\n
     email = cvetomirconev@gmail.com
+	signingkey = 7244520B
 
 [core]
     editor = vim
