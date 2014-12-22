@@ -12,7 +12,7 @@ call vundle#begin()
 " GitHub repos
 Plugin 'gmarik/vundle'
 Plugin 'rbgrouleff/bclose.vim'
-Plugin 'vim-scripts/indenthtml.vim'
+Plugin 'lukaszb/vim-web-indent'
 Plugin 'mutewinter/nginx.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'nanotech/jellybeans.vim'
