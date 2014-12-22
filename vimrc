@@ -41,6 +41,7 @@ set encoding=utf-8
 set modelines=0
 set backupdir=~/.vim/backup
 set directory=/tmp
+set nowritebackup
 set hidden
 
 " UI

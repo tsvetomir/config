@@ -19,5 +19,7 @@ alias xvfb="xvfb-run --auto-servernum -w 1"
 alias karma-chart="xvfb-run grunt karma:unit --tests='tests/{chart,stock,sparkline}/**/*.js'"
 alias karma-chart-once="xvfb-run grunt karma:unit --tests='tests/{chart,stock,sparkline}/**/*.js' --single-run=true"
 
-alias karma-all="xvfb-run grunt karma:unit"
+alias karma-all="xvfb-run grunt karma:unit --single-run=true"
 alias karma-all-once="xvfb-run grunt karma:unit --single-run=true"
+
+alias check-meta="node build/kendo-meta.js --check-deps kendo.all.js"
