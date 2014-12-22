@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-alias a="ack-grep -a"
-alias aa="ack-grep -a"
+alias a="ack-grep -k"
+alias aa="ack-grep"
 alias cp-prod="g co production && g pr && g cherry-pick master && g push && g co master"
 alias cp-prod-merge="g co production && g pr && g cherry-pick master -m 1 && g push && g co master"
 alias du="du -hsc"
