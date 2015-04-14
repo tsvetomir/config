@@ -6,6 +6,7 @@ alias cp-prod="g co production && g pr && g cherry-pick master && g push && g co
 alias cp-prod-merge="g co production && g pr && g cherry-pick master -m 1 && g push && g co master"
 alias du="du -hsc"
 alias g="git"
+alias gs="git s"
 alias gg="gitg -c"
 alias ls='ls --color=auto --human-readable'
 alias ll='ls -l'

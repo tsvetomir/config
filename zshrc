@@ -121,4 +121,6 @@ stty -ixon
 # if [[ $STY = '' ]] then grabvars; screen -xR; fi
 
 sourcevars
+cd ~/github/kendo
 
+[ -s "/home/local/TELERIK/tsonev/.kre/kvm/kvm.sh" ] && . "/home/local/TELERIK/tsonev/.kre/kvm/kvm.sh" # Load kvm
