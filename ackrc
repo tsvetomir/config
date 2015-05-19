@@ -17,6 +17,11 @@ asp=.cshtml
 --type-add
 asp=.cshtml
 
+--type-set
+md=.md
+--type-add
+md=.md
+
 --nomin
 --nocombined
 --asp

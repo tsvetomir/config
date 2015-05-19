@@ -21,8 +21,10 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'sudar/vim-arduino-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'rust-lang/rust.vim'
 
 " vim-scripts repos
 Plugin 'Obvious-Mode'

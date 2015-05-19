@@ -14,6 +14,7 @@ alias scr="/usr/bin/screen -D -RR"
 alias serve="python -m SimpleHTTPServer 8081"
 alias upgrade="sudo apt-get update && time sudo apt-get -y dist-upgrade"
 alias canon-count="gphoto2 --get-config /main/status/shuttercounter"
+alias mkdir="mkdir -p"
 
 alias xvfb="xvfb-run --auto-servernum -w 1"
 

@@ -103,7 +103,7 @@ SAVEHIST=1000
 HISTFILE=~/.history
 setopt APPEND_HISTORY
 
-export PATH=$HOME/.bin/:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:/usr/share/npm/bin:./node_modules/.bin:$PATH
+export PATH=$HOME/.bin/:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:/usr/share/npm/bin:./node_modules/.bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules:/usr/share/npm/node_modules:/usr/share/npm/bin
 
