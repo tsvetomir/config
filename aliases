@@ -3,6 +3,7 @@
 alias a="ack-grep -k"
 alias aa="ack-grep"
 alias cp-prod="g co production && g pr && g cherry-pick master && g push && g co master"
+alias cp-core-prod="g co core-production && g pr && g cherry-pick core-master && g push && g co core-master"
 alias cp-prod-merge="g co production && g pr && g cherry-pick master -m 1 && g push && g co master"
 alias du="du -hsc"
 alias g="git"

@@ -123,4 +123,4 @@ stty -ixon
 sourcevars
 cd ~/github/kendo
 
-[ -s "/home/local/TELERIK/tsonev/.kre/kvm/kvm.sh" ] && . "/home/local/TELERIK/tsonev/.kre/kvm/kvm.sh" # Load kvm
+[ -s "/home/local/TELERIK/tsonev/.dnx/dnvm/dnvm.sh" ] && . "/home/local/TELERIK/tsonev/.dnx/dnvm/dnvm.sh" # Load dnvm
