@@ -83,7 +83,7 @@ set foldmethod=marker
 set foldlevel=100
 
 " GUI Settings
-set guifont=Droid\ sans\ Mono\ for\ Powerline\ 11
+set guifont=Terminess\ Powerline\ 14
 set guioptions-=m
 set guioptions-=t
 set guioptions-=T
@@ -168,9 +168,6 @@ if !exists('g:airline_symbols')
       let g:airline_symbols = {}
   endif
 let g:airline_symbols.space = "\ua0"
-
-" Build Kendo MVC examples project
-autocmd BufWritePost ~/github/kendo/demos/mvc/Controllers/* silent !cd ~/github/kendo && xbuild demos/mvc/Kendo.csproj > /dev/null 2>&1
 
 " Associate *.cshtml with html filetype
 au BufRead,BufNewFile *.cshtml set filetype=html
