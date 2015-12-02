@@ -26,3 +26,5 @@ alias karma-all="xvfb-run grunt karma:unit --single-run=true"
 alias karma-all-once="xvfb-run grunt karma:unit --single-run=true"
 
 alias check-meta="node build/kendo-meta.js --check-deps kendo.all.js"
+
+alias core="cd ~/github/kendo-ui-core"
