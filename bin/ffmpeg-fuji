@@ -1,0 +1,9 @@
+#!/bin/bash
+for param in "$@"
+do
+    ffmpeg -i "$param" -vcodec libx264 -profile:v main -level 4.0 \
+           -acodec libfdk_aac -b:a 128k \
+           -movflags +faststart \
+           -map_metadata 0 \
+           "${param%.*}.mp4"
+done
