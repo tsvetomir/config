@@ -2,7 +2,8 @@
 for param in "$@"
 do
     ffmpeg -i "$param" -vcodec libx264 -profile:v main -level 4.0 \
-           -acodec libfdk_aac -b:a 128k \
+           -strict -2 \
+           -acodec aac -b:a 128k \
            -movflags +faststart \
            -map_metadata 0 \
            "${param%.*}.mp4"

@@ -1,0 +1,17 @@
+#!/bin/bash
+for param in "$@"
+do
+    # See
+    # http://developer.download.nvidia.com/compute/redist/ffmpeg/1511-patch/FFMPEG-with-NVIDIA-Acceleration-on-Ubuntu_UG_v01.pdf
+    ffmpeg -i "$param" \
+       -vcodec h264_nvenc \
+            -profile:v high -preset slow -b:v 5M \
+            -maxrate 10M -bufsize:v 10M -bf 2 -refs 1 \
+            -g 30 \
+            -i_qfactor 1.1 -b_qfactor 1.25 \
+            -qmin 1 -qmax 50 \
+       -acodec copy \
+       -movflags +faststart \
+       -map_metadata 0 \
+       "${param%.*}.mp4"
+done
