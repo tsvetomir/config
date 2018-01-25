@@ -16,6 +16,7 @@
 
 [diff]
     tool = meld
+    compactionHeuristic = true
 
 [difftool]
     prompt = false
@@ -54,3 +55,8 @@
 
 [push]
     default = tracking
+
+[rebase]
+    autoSquash = true
+[rerere]
+	enabled = true

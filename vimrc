@@ -10,7 +10,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " GitHub repos
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'lukaszb/vim-web-indent'
 Plugin 'mutewinter/nginx.vim'
@@ -25,11 +25,16 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'rust-lang/rust.vim'
+Plugin 'leafgarland/typescript-vim'
 
-" vim-scripts repos
 Plugin 'Obvious-Mode'
 Plugin 'ZoomWin'
 Plugin 'Nazca'
+
+" JavaScript
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -41,6 +46,7 @@ set backspace=2
 set autoread
 set encoding=utf-8
 set modelines=0
+set virtualedit=block
 set backupdir=~/.vim/backup
 set directory=/tmp
 set nowritebackup
@@ -61,6 +67,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
+
+autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 expandtab
 
 " Searching
 set ignorecase
@@ -94,16 +102,6 @@ map <silent> <F11>
             \   :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 set background=dark
 colo nazca
-hi javaScriptBrowserObjects       guifg=#DBB6D2 ctermfg=182   gui=italic
-hi javaScriptDOMObjects           guifg=#DBB6D2 gui=BOLD
-hi javaScriptDOMMethods           guifg=#D4FA9B ctermfg=192
-hi link javaScriptDOMProperties   Keyword
-hi javaScriptAjaxObjects          guifg=#5d91d3 gui=underline
-hi javaScriptAjaxMethods          guifg=#6699CC ctermfg=68
-hi javaScriptAjaxProperties       guifg=#FF9494 ctermfg=210
-hi javaScriptFuncName             guifg=#B5E4F7 ctermfg=153
-hi javaScriptHtmlElemProperties   guifg=#FF9494 ctermfg=210
-hi javaScriptEventListenerKeyword guifg=#6699CC ctermfg=68
 
 " Terminal settings
 set t_Co=256

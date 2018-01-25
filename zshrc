@@ -107,13 +107,6 @@ export PATH=$HOME/.bin/:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:/usr/
 
 export NODE_PATH=$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules:/usr/share/npm/node_modules:/usr/share/npm/bin
 
-# Rake VM options
-export RUBY_HEAP_MIN_SLOTS=800000
-export RUBY_HEAP_FREE_MIN=100000
-export RUBY_HEAP_SLOTS_INCREMENT=300000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=79000000
-
 # Disable suspend on Ctrl+S
 stty -ixon
 
@@ -124,3 +117,5 @@ sourcevars
 cd ~/github/kendo
 
 [ -s "/home/local/TELERIK/tsonev/.dnx/dnvm/dnvm.sh" ] && . "/home/local/TELERIK/tsonev/.dnx/dnvm/dnvm.sh" # Load dnvm
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

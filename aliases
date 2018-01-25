@@ -12,19 +12,22 @@ alias gg="gitg -c"
 alias ls='ls --color=auto --human-readable'
 alias ll='ls -l'
 alias scr="/usr/bin/screen -D -RR"
-alias serve="python -m SimpleHTTPServer 8081"
-alias upgrade="sudo apt-get update && time sudo apt-get -y dist-upgrade"
+alias serve="python -m SimpleHTTPServer 10100"
+alias upgrade="sudo apt-get update && time sudo apt-get -y --force-yes dist-upgrade"
 alias canon-count="gphoto2 --get-config /main/status/shuttercounter"
 alias mkdir="mkdir -p"
 
-alias xvfb="xvfb-run --auto-servernum -w 1"
+alias xvfb="xvfb-run --auto-servernum -w 1 -s '-screen 0 1024x768x8'"
 
-alias karma-chart="xvfb-run grunt karma:unit --tests='tests/{chart,stock,sparkline}/**/*.js'"
-alias karma-chart-once="xvfb-run grunt karma:unit --tests='tests/{chart,stock,sparkline}/**/*.js' --single-run=true"
+alias karma-chart="xvfb-run grunt karma-unit --tests='tests/{chart,stock,sparkline}/**/*.js'"
+alias karma-chart-once="xvfb-run grunt karma-unit --tests='tests/{chart,stock,sparkline}/**/*.js' --single-run=true"
 
-alias karma-all="xvfb-run grunt karma:unit --single-run=true"
-alias karma-all-once="xvfb-run grunt karma:unit --single-run=true"
+alias karma-all="xvfb-run grunt karma-unit --single-run=true"
+alias karma-all-once="xvfb-run grunt karma-unit --single-run=true"
 
 alias check-meta="node build/kendo-meta.js --check-deps kendo.all.js"
 
-alias core="cd ~/github/kendo-ui-core"
+alias record-dojo="byzanz-record -d 8 --delay=5 -x 950 -y 200 -w 950 -h 500 ~/tmp/dojo.gif"
+alias x-window="sleep 2 && xwininfo -id $(xdotool getactivewindow)"
+
+alias us-ff="export TZ='America/New_York' && firefox"
