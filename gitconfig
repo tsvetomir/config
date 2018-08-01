@@ -1,7 +1,7 @@
 [user]
     name = Tsvetomir Tsonev\n
     email = cvetomirconev@gmail.com
-	signingkey = 7244520B
+    signingkey = 4531774A
 
 [core]
     editor = vim
@@ -58,5 +58,10 @@
 
 [rebase]
     autoSquash = true
+
 [rerere]
-	enabled = true
+    enabled = true
+
+[commit]
+    gpgSign = true
+

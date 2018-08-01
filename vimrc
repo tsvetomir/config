@@ -26,6 +26,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'rust-lang/rust.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'Obvious-Mode'
 Plugin 'ZoomWin'
@@ -52,6 +53,11 @@ set directory=/tmp
 set nowritebackup
 set hidden
 
+" Map Ctrl+S to update
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+
 " UI
 set laststatus=2
 set lazyredraw
@@ -63,12 +69,12 @@ set list listchars=tab:>-,trail:.
 
 " Text Formatting
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 
-autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 expandtab
+" autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 expandtab
 
 " Searching
 set ignorecase
@@ -91,7 +97,7 @@ set foldmethod=marker
 set foldlevel=100
 
 " GUI Settings
-set guifont=Terminess\ Powerline\ 14
+set guifont=Monaco:h16
 set guioptions-=m
 set guioptions-=t
 set guioptions-=T
@@ -124,8 +130,8 @@ let g:ctrlp_cmd = 'CtrlP'
 
 nnoremap <leader>b :CtrlPBuffer<CR>
 
-set wildignore+=*/dist/*,*/node_modules/*,*.min.js
-let g:ctrlp_user_command = 'find %s -type f -not -path "*/dist/*" -not -path "*/node_modules/*" -not -path "*/dist/*"'
+set wildignore+=*/node_modules/*
+let g:ctrlp_user_command = 'find %s -type f -not -path "*/node_modules/*" -not -path "*/.git/*" -not -path "*/dist/*"'
 
 " Retain cursor position on Esc
 inoremap <silent> <Esc> <Esc>`^
@@ -169,5 +175,4 @@ let g:airline_symbols.space = "\ua0"
 
 " Associate *.cshtml with html filetype
 au BufRead,BufNewFile *.cshtml set filetype=html
-
 

@@ -1,72 +1,75 @@
-autoload -U compinit colors
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null)
-  if [[ -n $ref ]]; then
-    echo "%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}"
-  fi
-}
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/tsonev/.oh-my-zsh"
 
-# makes color constants available
-colors
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# enable colored output from ls, etc
-export CLICOLOR=1
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# expand functions in the prompt
-setopt prompt_subst
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# prompt
-export PS1='%{$fg_bold[blue]%}(~)%{$reset_color%} '
-export RPROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}"}%{$fg_bold[blue]%}%~%{$reset_color%} -- $(git_prompt_info)'
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-_git_remote_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null)
-  if [[ -n $ref ]]; then
-    if (( CURRENT == 2 )); then
-      # first arg: operation
-      compadd create publish rename delete track
-    elif (( CURRENT == 3 )); then
-      if [[ $words[2] == "publish" ]]; then
-        # second arg: local branch name
-        compadd `git branch -l | sed "s/[ \*]//g"`
-      else;
-        # second arg: remote branch name
-        compadd `git branch -r | grep -v HEAD | sed "s/.*\///" | sed "s/ //g"`
-      fi
-    elif (( CURRENT == 4 )); then
-      # third arg: remote name
-      compadd `git remote`
-    fi
-  else;
-    _files
-  fi
-}
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-compctl -K _git_remote_branch grb
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-stty -ixon
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# Environment variables and Screen
-export VARSLOC=$HOME/.vars
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-grabvars() {
-    for x in SSH_AGENT_PID SSH_AUTH_SOCK DISPLAY; do
-        echo "export $x='${(P)x:q}'"
-    done >$VARSLOC
-}
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-sourcevars() {
-    [ -f $VARSLOC ] && source $VARSLOC
-}
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-# completion
-compinit
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# automatically enter directories without cd
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  gpg-agent
+  npm
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
 
 # 10 second wait if you do something that will delete everything.
 setopt RM_STAR_WAIT
@@ -74,16 +77,14 @@ setopt RM_STAR_WAIT
 # Be Reasonable!
 setopt numeric_glob_sort
 
-# use vim as an editor
+# Use vim as an editor
 export EDITOR=vim
-
-# aliases
-if [ -e "$HOME/.aliases" ]; then
-  source "$HOME/.aliases"
-fi
 
 # vi mode
 bindkey -v
+
+# Pass Ctrl+S to applications
+stty -ixon
 
 # use incremental search
 bindkey ^R history-incremental-search-backward
@@ -91,31 +92,29 @@ bindkey ^R history-incremental-search-backward
 bindkey ^P history-beginning-search-backward
 bindkey ^N history-beginning-search-forward
 
-# expand functions in the prompt
-setopt prompt_subst
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# ignore duplicate history entries
-setopt histignoredups
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-setopt share_history
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.history
-setopt APPEND_HISTORY
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-export PATH=$HOME/.bin/:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/1.9.1/bin:/usr/share/npm/bin:./node_modules/.bin:$PATH
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-export NODE_PATH=$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules:/usr/share/npm/node_modules:/usr/share/npm/bin
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Disable suspend on Ctrl+S
-stty -ixon
-
-# Autoload screen if we aren't in it.  (Thanks Fjord!)
-# if [[ $STY = '' ]] then grabvars; screen -xR; fi
-
-sourcevars
-cd ~/github/kendo
-
-[ -s "/home/local/TELERIK/tsonev/.dnx/dnvm/dnvm.sh" ] && . "/home/local/TELERIK/tsonev/.dnx/dnvm/dnvm.sh" # Load dnvm
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
