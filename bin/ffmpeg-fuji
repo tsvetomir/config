@@ -2,7 +2,7 @@
 for param in "$@"
 do
     ffmpeg -i "$param" \
-           -c:v libx264 -b:v 10M -profile:v main -level 4.0 \
+           -c:v h264_videotoolbox -b:v 10M -profile:v main -level 4.0 \
            -strict -2 \
            -c:a aac -b:a 128k \
            -movflags +faststart \
