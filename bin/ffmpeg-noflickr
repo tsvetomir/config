@@ -1,0 +1,14 @@
+#!/bin/sh
+for param in "$@"
+do
+    ffmpeg -fflags +genpts -i "$param" \
+           -fflags +genpts -i "$param" \
+           -filter_complex \
+             "[0:v]setpts=PTS-STARTPTS[top]; [1:v]setpts=PTS-STARTPTS+.033/TB, format=yuva420p, colorchannelmixer=aa=0.5[bottom]; [top][bottom]overlay=shortest=1" \
+           -c:v h264_videotoolbox -b:v 10M -profile:v main -level 4.0 \
+           -strict -2 \
+           -c:a aac -b:a 128k \
+           -movflags +faststart \
+           -map_metadata 0 \
+           "${param%.*}.mp4"
+done
