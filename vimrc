@@ -25,10 +25,11 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'rust-lang/rust.vim'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'easymotion/vim-easymotion'
 
 Plugin 'Obvious-Mode'
+Plugin 'Terminus'
 Plugin 'ZoomWin'
 Plugin 'Nazca'
 
@@ -36,6 +37,10 @@ Plugin 'Nazca'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
+
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'quramy/vim-js-pretty-template'
 
 call vundle#end()
 
@@ -52,11 +57,6 @@ set backupdir=~/.vim/backup
 set directory=/tmp
 set nowritebackup
 set hidden
-
-" Map Ctrl+S to update
-noremap <silent> <C-S> :update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <C-O>:update<CR>
 
 " UI
 set laststatus=2
@@ -142,6 +142,12 @@ noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
 
+" Add F2 for saving, also in Insert mode
+" Remap iTerm2 to send 0x113 on Cmd+S
+noremap <F2> :update<CR>
+vnoremap <F2> <C-C>:update<CR>
+inoremap <F2> <C-O>:update<CR>
+
 " Ctrl+R replaces selected text
 vnoremap <C-r> "hy:.,$s/<C-r>h//c<left><left>
 
@@ -175,4 +181,18 @@ let g:airline_symbols.space = "\ua0"
 
 " Associate *.cshtml with html filetype
 au BufRead,BufNewFile *.cshtml set filetype=html
+
+" Easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
