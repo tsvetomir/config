@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=./node_modules/.bin:$HOME/.npm/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/tsonev/.oh-my-zsh"
@@ -110,8 +110,9 @@ bindkey ^N history-beginning-search-forward
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export "GPG_TTY=$(tty)"
-export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
+export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -121,3 +122,5 @@ export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
