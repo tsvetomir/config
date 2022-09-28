@@ -9,10 +9,9 @@ alias du="du -hsc"
 alias g="git"
 alias gs="git s"
 alias gg="gitg -c"
-alias ls='ls --color=auto --human-readable'
 alias ll='ls -l'
 alias scr="/usr/bin/screen -D -RR"
-alias serve="python -m SimpleHTTPServer 10100"
+alias serve="http-server -c-1 -a 127.0.0.1"
 alias upgrade="sudo apt-get update && time sudo apt-get -y --force-yes dist-upgrade"
 alias canon-count="gphoto2 --get-config /main/status/shuttercounter"
 alias mkdir="mkdir -p"
@@ -25,9 +24,7 @@ alias karma-chart-once="xvfb-run grunt karma-unit --tests='tests/{chart,stock,sp
 alias karma-all="xvfb-run grunt karma-unit --single-run=true"
 alias karma-all-once="xvfb-run grunt karma-unit --single-run=true"
 
-alias check-meta="node build/kendo-meta.js --check-deps kendo.all.js"
-
-alias record-dojo="byzanz-record -d 8 --delay=5 -x 950 -y 200 -w 950 -h 500 ~/tmp/dojo.gif"
-alias x-window="sleep 2 && xwininfo -id $(xdotool getactivewindow)"
-
 alias us-ff="export TZ='America/New_York' && firefox"
+alias rm-node-modules="rm -rf node_modules package-lock.json yarn.lock"
+alias use-node-10="export PATH=/usr/local/opt/node@10/bin:$PATH"
+alias use-gpg-agent="gpg-agent --daemon --enable-ssh-support && export SSH_AUTH_SOCK=/Users/tsonev/.gnupg/S.gpg-agent.ssh"

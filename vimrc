@@ -19,7 +19,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'scrooloose/nerdtree'
@@ -27,6 +27,7 @@ Plugin 'bling/vim-airline'
 Plugin 'rust-lang/rust.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'junegunn/limelight.vim'
 
 Plugin 'Obvious-Mode'
 Plugin 'Terminus'
@@ -54,6 +55,8 @@ set encoding=utf-8
 set modelines=0
 set virtualedit=block
 set backupdir=~/.vim/backup
+set undodir=~/.vim/undodir
+set undofile " Maintain undo history between sessions
 set directory=/tmp
 set nowritebackup
 set hidden
@@ -89,6 +92,7 @@ vnoremap <tab> %
 
 " Spelling
 autocmd FileType markdown setlocal spell spelllang=en_us
+" autocmd FileType markdown Limelight 0.8
 
 " Folding
 set nofoldenable
@@ -195,4 +199,8 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" Mardown
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_fenced_languages = ['ts=typescript', 'ts-no-run=typescript', 'html-no-run=html']
 

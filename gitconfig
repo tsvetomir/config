@@ -1,67 +1,86 @@
 [user]
-    name = Tsvetomir Tsonev\n
-    email = cvetomirconev@gmail.com
-    signingkey = 4531774A
+  name = Tsvetomir Tsonev\n
+  email = cvetomirconev@gmail.com
+	signingkey = /Users/tsonev/.ssh/id_ed25519
 
 [core]
-    editor = vim
-    autocrlf = false
-    whitespace = cr-at-eol
+  editor = vim
+  autocrlf = false
+  whitespace = cr-at-eol
+	excludesfile = /Users/tsonev/.gitignore
 
 [color]
-    ui = true
+  ui = true
 
 [format]
   pretty = %Cblue%h%Creset %Cgreen[%cr]%Creset (%an) %s
 
 [diff]
-    tool = meld
-    compactionHeuristic = true
+  tool = meld
+  compactionHeuristic = true
 
 [difftool]
-    prompt = false
+  prompt = false
 
 [difftool "meld"]
-    cmd = meld $LOCAL $REMOTE
+  cmd = meld $LOCAL $REMOTE
 
 [merge]
-    tool = meld
+  tool = meld
 
 [mergetool]
-    prompt = false
+  prompt = false
 
 [mergetool "meld"]
-    cmd = ~/bin/git_merge_meld $LOCAL $BASE $REMOTE $MERGED
-    trustExitCode = false
+  cmd = ~/bin/git_merge_meld $LOCAL $BASE $REMOTE $MERGED
+  trustExitCode = false
 
 [github]
-    user = tsvetomir
-    token = [SECRET]
+  user = tsvetomir
+  token = [SECRET]
 
 [alias]
-    a = add
-    c = commit -m
-    co = checkout
-    d = diff
-    dc = diff --cached
-    dt = difftool
-    dtc = difftool --cached
-    l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%an%Creset (%cr)' --abbrev-commit --date=relative
-    pr = "!git fetch --prune && git rebase --preserve-merges `git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
-    s = status -sb
+  a = add
+  c = commit -m
+  co = checkout
+  d = diff
+  dc = diff --cached
+  dt = difftool
+  dtc = difftool --cached
+  l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%an%Creset (%cr)' --abbrev-commit --date=relative
+  pr = "!git fetch --prune && git rebase --rebase-merges `git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
+  s = status -sb
 
 [branch]
-    autosetuprebase = always
+  autosetuprebase = always
 
 [push]
-    default = tracking
+  default = tracking
 
 [rebase]
-    autoSquash = true
+  autoSquash = true
 
 [rerere]
-    enabled = true
+  enabled = true
 
 [commit]
-    gpgSign = true
+	gpgsign = false
 
+[pager]
+    #status = true
+
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+
+[pull]
+  twohead = ort
+
+[codespaces-theme]
+	hide-status = 1
+[gpg "ssh"]
+	allowedSignersFile = /Users/tsonev/.allowed_signers
+[gpg]
+	format = ssh
