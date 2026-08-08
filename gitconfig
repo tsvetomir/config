@@ -45,7 +45,7 @@
     dt = difftool
     dtc = difftool --cached
     l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%an%Creset (%cr)' --abbrev-commit --date=relative
-    pr = "!git fetch --prune && git rebase --preserve-merges `git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
+    pr = "!git fetch --prune && git rebase --rebase-merges `git rev-parse --abbrev-ref --symbolic-full-name @{u}`"
     s = status -sb
 
 [branch]
